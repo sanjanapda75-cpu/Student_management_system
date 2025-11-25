@@ -1,11 +1,13 @@
+from http.server import SimpleHTTPRequestHandler,HTTPServer
 
-class myhandler(simpleHTTPRequestHandler):
+
+class MyHandler(SimpleHTTPRequestHandler):
+
     def do_GET(self):
-        if self.path=='/':
-            self.path='index.html'
+        if self.path == '/':
+            self.path = 'index.html'
         return super().do_GET()
-
-if _name_=="_main_":
-server=htttpserver(('localhost', 8000), myhandler)
-print("serving on http://localhost:8000")
-server.serve_forever()
+if __name__ == "__main__":
+    server=HTTPServer(('localhost', 8000), MyHandler)
+    print("Serving on http://localhost:8000")
+    server.serve_forever()
