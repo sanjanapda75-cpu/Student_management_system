@@ -14,3 +14,9 @@ def service_get_one(student_id):
 
 def service_create(data):
     return db_create(data)
+
+def service_update(student_id, data):
+    return db_update(student_id, data)
+
+def service_delete(student_id):
+    return db_delete(student_id)
